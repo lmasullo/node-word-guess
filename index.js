@@ -8,7 +8,7 @@ const Word = require('./word');
 const word = new Word();
 
 //! Set up variables
-//let numGuesses = 10;
+let numGuesses = 10;
 
 // Array of Movies for the user to try and guess
 const arrWord = ['The Matrix', 'Star Wars', 'Star Trek', 'Serenity'];
