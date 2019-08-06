@@ -5,7 +5,6 @@
 
 // Letter Constructor
 function Letter() {
-
   // This comes from word.js, the guessed letter and the object that contains all the letters of the movie
   this.isGuessed = function (guessedLetter, objAllLetters) {
     // Set the default return variables
@@ -33,8 +32,7 @@ function Letter() {
     });
 
     return concatString;
-
-  };//End function this is guessed
+  };// End function this is guessed
 }// End Letter Constructor
 
 module.exports = Letter;

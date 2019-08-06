@@ -33,24 +33,21 @@ const Word = function () {
     }
     console.log('Try and guess the Movie, you have 10 guesses!');
     console.log(concatMovie);
-    //console.log(objLetters);
+    // console.log(objLetters);
 
     // return objLetters;
   };
 
   this.checkLetter = function (guessedLetter) {
-   console.log(guessedLetter);
-   //console.log(objLetters);
+    console.log(guessedLetter);
+    // console.log(objLetters);
 
     // Call the function in letter to check if this letter is in the movie name
-    const resultCheck = letter.isGuessed(guessedLetter, objLetters);
+    letter.isGuessed(guessedLetter, objLetters);
     // return resultCheck;
-    console.log(resultCheck);
-  };//End checkLetter function
-
-};//End Constructor Word
+    // console.log(resultCheck);
+  };// End checkLetter function
+};// End Constructor Word
 
 // Export the Word object to index.js
 module.exports = Word;
-
-
