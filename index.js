@@ -66,4 +66,4 @@ const askQuestion = function () {
 };// End Ask Question Recursive function
 
 // Call the function to start asking for guesses
-//askQuestion();
+askQuestion();
