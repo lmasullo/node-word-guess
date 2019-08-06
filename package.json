@@ -1,7 +1,6 @@
 {
   "name": "node-word-guess",
   "version": "1.0.0",
-  "description": "",
   "main": "letter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,9 +19,13 @@
   "dependencies": {
     "inquirer": "^6.5.0"
   },
+<<<<<<< HEAD
   "devDependencies": {
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2"
   }
+=======
+  "description": ""
+>>>>>>> 830a7ea009075f6103388b5b7d53460838fcf91f
 }
