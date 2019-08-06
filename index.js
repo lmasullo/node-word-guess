@@ -1,11 +1,12 @@
+/* eslint-disable no-restricted-globals */
+// Require the inquirer npm package
+const inquirer = require('inquirer');
+
 // Import word.js
 const Word = require('./word');
 
 // Create the new Word object
 const word = new Word();
-
-// Require the inquirer npm package
-const inquirer = require('inquirer');
 
 //! Set up variables
 let numGuesses = 10;
@@ -18,7 +19,7 @@ const randMovie = arrWord[Math.floor(Math.random() * arrWord.length)];
 
 // console.log(randMovie);
 
-// Create an Object container the random movie
+// Create an Object containing the random movie
 objMovie = {
   movie: randMovie,
 };
@@ -52,13 +53,14 @@ inquirer
 
     // Add the chosen letter to the objMovie so I can send to word.js
     objMovie.letter = answers.letter;
-    console.log(`Movie: ${objMovie.movie} - Letter: ${objMovie.letter}`);
+    // console.log(`Movie: ${objMovie.movie} - Letter: ${objMovie.letter}`);
 
     // Call the constructor on word.js and pass in the object with the letter and movie
     word.createWordArray(objMovie);
   });
 
-// Export the random movie to word.js, Word.js will construct an object of the random word
+// Export the random movie to word.js,
+// Word.js will construct an object of the random word
 // module.exports = objMovie;
 // todo *******************************
 // Need to prompt the user for a letter

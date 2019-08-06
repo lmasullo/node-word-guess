@@ -17,17 +17,19 @@ const Word = function () {
   this.createWordArray = function (objMovie) {
     // Add the letter to the guessedLetters object
     const guessedLetter = objMovie.letter;
-    console.log(guessedLetter);
+    // console.log(guessedLetter);
     guessedLetters[guessedLetter] = guessedLetter;
 
     // Split the movie into an array of characters
     const splitMovie = objMovie.movie.toLowerCase().split('');
-    console.log(splitMovie);
-    console.log(guessedLetters);
+    // console.log(splitMovie);
+    // console.log(guessedLetters);
 
     // Call Letter.js function
-    const checkLetter = letter.isGuessed(guessedLetter, splitMovie);
-    console.log(checkLetter);
+    letter.isGuessed(guessedLetter, splitMovie);
+    // checkLetter.isGuessed();
+    // const checkLetter = letter.isGuessed(guessedLetter, splitMovie);
+    // console.log(checkLetter);
   };
 };
 
