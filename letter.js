@@ -18,6 +18,8 @@ function Letter() {
     // Loop over object and find the matching key/values
     Object.keys(objLetters).forEach((key) => {
       console.log(`Key: ${key} - Value: ${objLetters[key]}`);
+
+      // Check if the value = to the user's guessed letter
       if (objLetters[key] === guessedLetter) {
         concatString += `${guessedLetter} `;
         isVisited[objLetters[key]] = true;
