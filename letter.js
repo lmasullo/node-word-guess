@@ -8,35 +8,32 @@
 function Letter() {
   // This comes from word.js
   // The guessed letter and the object that contains all the letters of the movie
-  this.isGuessed = function (guessedLetter, objAllLetters, isVisited) {
+  // and the isVisited object to keep track of the guessed letters
+  this.isGuessed = function (guessedLetter, objLetters, isVisited) {
     // Set the default return variables
     const underscore = '_';
     const space = ' ';
     let concatString = '';
 
-    // Create the results array to hold the key positions that match
-    // const results = [];
-    // console.log(objAllLetters);
     // Loop over object and find the matching key/values
-    Object.keys(objAllLetters).forEach((key) => {
-      // console.log(`${key} - ${objAllLetters[key]}`);
-      if (objAllLetters[key] === guessedLetter) {
-        // objAllLetters[key] = guessedLetter;
+    Object.keys(objLetters).forEach((key) => {
+      console.log(`Key: ${key} - Value: ${objLetters[key]}`);
+      if (objLetters[key] === guessedLetter) {
         concatString += `${guessedLetter} `;
-        isVisited[objAllLetters[key]] = true;
-      } else if (objAllLetters[key] === ' ') {
-        // objAllLetters[key] = space;
+        isVisited[objLetters[key]] = true;
+      } else if (objLetters[key] === ' ') {
+        // objLetters[key] = space;
         concatString += `${space} `;
-      } else if (isVisited[objAllLetters[key]]) {
-        concatString += objAllLetters[key];
+      } else if (isVisited[objLetters[key]]) {
+        concatString += objLetters[key];
       } else {
-        // else if (!isVisited[objAllLetters[key]]) {
-        // objAllLetters[key] = underscore;
+        // else if (!isVisited[objLetters[key]]) {
+        // objLetters[key] = underscore;
         concatString += `${underscore} `;
       }
     });
     // console.log(isVisited);
-    // console.log(objAllLetters);
+    // console.log(objLetters);
 
     return concatString;
   }; // End function this is guessed

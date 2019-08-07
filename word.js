@@ -34,7 +34,7 @@ const Word = function () {
       }
     }
 
-    console.log(this.objLetters);
+    // console.log(this.objLetters);
     console.log('Try and guess the Movie, you have 10 guesses!');
     console.log(concatMovie);
     // console.log(objLetters);
