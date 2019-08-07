@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-plusplus */
 // Require the inquirer npm package
 const inquirer = require('inquirer');
 
@@ -14,7 +16,7 @@ let numGuesses = 10;
 const arrWord = ['The Matrix', 'Star Wars', 'Star Trek', 'Serenity'];
 
 // Choose a random movie from 0 to 1 less than the array length
-const randMovie = arrWord[Math.floor((Math.random() * arrWord.length))];
+const randMovie = arrWord[Math.floor(Math.random() * arrWord.length)];
 
 // Call the Word Constructor Function to display the blank movie to display
 word.createBlankMovie(randMovie);
@@ -59,11 +61,11 @@ const askQuestion = function () {
         // Call the function to start asking for guesses
         askQuestion();
       });
-  }// End Count < 5
-  else {
+    // End Count < 5
+  } else {
     console.log('You have used all your guesses!');
   }
-};// End Ask Question Recursive function
+}; // End Ask Question Recursive function
 
 // Call the function to start asking for guesses
 askQuestion();
