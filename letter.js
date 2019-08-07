@@ -17,23 +17,28 @@ function Letter() {
 
     // Loop over object and find the matching key/values
     Object.keys(objLetters).forEach((key) => {
-      console.log(`Key: ${key} - Value: ${objLetters[key]}`);
+      // console.log(`Key: ${key} - Value: ${objLetters[key]}`);
 
       // Check if the value = to the user's guessed letter
       if (objLetters[key] === guessedLetter) {
-        concatString += `${guessedLetter} `;
+        concatString += ` ${guessedLetter}`;
+        // Set the isVisited to true
         isVisited[objLetters[key]] = true;
       } else if (objLetters[key] === ' ') {
-        // objLetters[key] = space;
-        concatString += `${space} `;
+        concatString += ` ${space}`;
       } else if (isVisited[objLetters[key]]) {
-        concatString += objLetters[key];
+        concatString += ` ${objLetters[key]}`;
       } else {
-        // else if (!isVisited[objLetters[key]]) {
-        // objLetters[key] = underscore;
-        concatString += `${underscore} `;
+        concatString += ` ${underscore}`;
       }
     });
+
+    if (isVisited[guessedLetter]) {
+      console.log('CORRECT!');
+    } else {
+      console.log('INCORRECT!');
+    }
+
     // console.log(isVisited);
     // console.log(objLetters);
 

@@ -10,8 +10,6 @@ const Word = require('./word');
 const word = new Word();
 
 //! Set up variables
-let numGuesses = 10;
-
 // Array of Movies for the user to try and guess
 const arrWord = ['The Matrix', 'Star Wars', 'Star Trek', 'Serenity'];
 
@@ -21,12 +19,14 @@ const randMovie = arrWord[Math.floor(Math.random() * arrWord.length)];
 // Call the Word Constructor Function to display the blank movie to display
 word.createBlankMovie(randMovie);
 
+
 // Set up Recursion Counter
 let count = 0;
 
 // Recursive Function
 const askQuestion = function () {
-  if (count < 5) {
+  let numGuesses = 10;
+  if (count < numGuesses) {
     // Prompt for a letter
     inquirer
       .prompt([
@@ -48,22 +48,26 @@ const askQuestion = function () {
       .then((answers) => {
         // console.log(answers.letter);
 
-        // Increment the user guesses
+        // Decrement the user's guesses
         numGuesses--;
-        // console.log(numGuesses);
+        console.log(`NumGuesses ${numGuesses}`);
+
+        // Increment the coutner
+        count++;
+        console.log(`Count: ${count}`);
+        console.log(`You have ${numGuesses} guesses remaining.`);
 
         // Call the constructor on word.js and pass in guessed letter
         word.checkLetter(answers.letter);
 
-        // Increment the coutner
-        count++;
-
-        // Call the function to start asking for guesses
+        // Call the function to continue asking for guesses
         askQuestion();
       });
-    // End Count < 5
+    // End Count
   } else {
-    console.log('You have used all your guesses!');
+    console.log("You have used all your guesses!\nHere's a new word");
+    // Re-call the Word Constructor Function to display the blank movie to display
+    word.createBlankMovie(randMovie, numGuesses);
   }
 }; // End Ask Question Recursive function
 

@@ -28,14 +28,14 @@ const Word = function () {
       this.objLetters[key] = splitMovie[i];
       if (splitMovie[i] !== ' ') {
         // Add to the string to display
-        concatMovie += `${underscore} `;
+        concatMovie += ` ${underscore} `;
       } else {
-        concatMovie += `${blank} `;
+        concatMovie += ` ${blank} `;
       }
     }
 
     // console.log(this.objLetters);
-    console.log('Try and guess the Movie, you have 10 guesses!');
+    console.log('Try and guess the Movie!');
     console.log(concatMovie);
     // console.log(objLetters);
 
@@ -43,8 +43,8 @@ const Word = function () {
   };
 
   this.checkLetter = function (guessedLetter) {
-    console.log(guessedLetter);
-    console.log(this.objLetters);
+    // console.log(guessedLetter);
+    // console.log(this.objLetters);
 
     // Call the function in letter to check if this letter is in the movie name
     const resultCheck = letter.isGuessed(guessedLetter, this.objLetters, this.visited);
