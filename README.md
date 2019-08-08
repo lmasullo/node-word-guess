@@ -35,7 +35,7 @@ The app uses the following NPM packages:
 
 ## Demo (Click the Image to View the Demo Video)
 
-[![Watch the video](images/instruct1.png)](https://www.youtube.com/embed/-isHopAYq7w "Main Menu")
+[![Watch the video](images/main2.png)](https://www.youtube.com/embed/4BBPZ4oSlco "Main Menu")
 
 ## GitHub Repo
 https://github.com/lmasullo/node-word-guess
