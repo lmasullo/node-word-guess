@@ -30,18 +30,8 @@ The app uses the following NPM packages:
 
 ![alt text](images/main.png "Main Menu")
 
-* Use your arrow key to make a choice and press 'Enter'
-* You will be given a confirmation message, press 'Enter' if you want to continue
-* Enter the Search Term and press 'Enter'
-* You will be presented with the search results:
-
-![alt text](images/instruct2b.png "Search Result")
-
-* You have your choice to search for a concert, song, or a movie.
-* The last choice in the menu "Run Text File Command' will read the random.txt file and execute the enclosed command.
-* All of the search results are saved in the log.txt file
-
-![alt text](images/log.png "Log.txt File")
+* Type a letter and the app will tell you if you are correct. If you guess correctly, the letter will replace the underscore.
+* You get 10 choices, good luck!
 
 ## Demo (Click the Image to View the Demo Video)
 
