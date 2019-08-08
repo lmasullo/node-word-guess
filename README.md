@@ -38,7 +38,7 @@ The app uses the following NPM packages:
 [![Watch the video](images/instruct1.png)](https://www.youtube.com/embed/-isHopAYq7w "Main Menu")
 
 ## GitHub Repo
-https://github.com/lmasullo/liri-node-app
+https://github.com/lmasullo/node-word-guess
 
 ## Versioning
 
