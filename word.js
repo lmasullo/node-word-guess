@@ -50,27 +50,34 @@ const Word = function () {
     const resultCheck = letter.isGuessed(guessedLetter, this.objLetters, this.visited);
     console.log(resultCheck);
 
-    // Need to compare the 2 arrays to tell when they
+    // Need to compare the 2 arrays to tell when the user has guessed the whole movie
     // Create an array to hold all the letters
-    const arrLetters = [];
+    let arrLetters = [];
     Object.keys(this.objLetters).forEach((key) => {
       if (this.objLetters[key] !== ' ') {
         arrLetters.push(this.objLetters[key]);
       }
     });
 
-    // Remove duplicates
-    const arrUnique = arrLetters.filter((v, i, a) => a.indexOf(v) === i);
+    // Remove duplicates from the array of letters
+    arrLetters = arrLetters.filter((v, i, a) => a.indexOf(v) === i);
 
     // Put the concatinated string into an array of characters
     let arrConcat = resultCheck.toLowerCase().split('');
+
     // Remove duplicates
     arrConcat = arrConcat.filter((v, i, a) => a.indexOf(v) === i);
-    // Delete the blank
+
+    // Delete the blank space
+    arrConcat = arrConcat.filter(entry => entry.trim() != '');
 
     // console.log(arrUnique);
-    console.log('arrConcat');
-    console.log(arrConcat);
+    // console.log('arrConcat');
+    // console.log(arrConcat);
+
+    // Now compare
+    const strLetters = JSON.stringify(arrLetters);
+    const strVisited = JSON.stringify(arrConcat);
 
     // // Create an array to hold all the visited letters
     // let arrVisited = [];
@@ -89,14 +96,14 @@ const Word = function () {
     // // console.log(strLetters);
     // // console.log(strVisited);
 
-    // if (strLetters === strVisited) {
-    //   const done = true;
-    //   // console.log('Your Got it Right! Next Word.');
-    //   return concatString;
-    // }
+    if (strLetters === strVisited) {
+      // const done = true;
+      console.log('Your Got it Right! Next Word.');
+      return 'done';
+    }
 
     // return resultCheck;
-    console.log(resultCheck);
+    // console.log(resultCheck);
   }; // End checkLetter function
 }; // End Constructor Word
 
