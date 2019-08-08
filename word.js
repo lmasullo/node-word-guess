@@ -39,7 +39,8 @@ const Word = function () {
     console.log(concatMovie);
     // console.log(objLetters);
 
-    // return objLetters;
+    // const newWord = true;
+    // return newWord;
   };
 
   this.checkLetter = function (guessedLetter) {
@@ -48,7 +49,6 @@ const Word = function () {
 
     // Call the function in letter to check if this letter is in the movie name
     const resultCheck = letter.isGuessed(guessedLetter, this.objLetters, this.visited);
-    console.log(resultCheck);
 
     // Need to compare the 2 arrays to tell when the user has guessed the whole movie
     // Create an array to hold all the letters
@@ -58,18 +58,16 @@ const Word = function () {
         arrLetters.push(this.objLetters[key]);
       }
     });
-
     // Remove duplicates from the array of letters
     arrLetters = arrLetters.filter((v, i, a) => a.indexOf(v) === i);
 
+
     // Put the concatinated string into an array of characters
     let arrConcat = resultCheck.toLowerCase().split('');
-
     // Remove duplicates
     arrConcat = arrConcat.filter((v, i, a) => a.indexOf(v) === i);
-
     // Delete the blank space
-    arrConcat = arrConcat.filter(entry => entry.trim() != '');
+    arrConcat = arrConcat.filter(entry => entry.trim() !== '');
 
     // console.log(arrUnique);
     // console.log('arrConcat');
@@ -97,12 +95,14 @@ const Word = function () {
     // // console.log(strVisited);
 
     if (strLetters === strVisited) {
-      // const done = true;
+      const done = true;
       console.log('Your Got it Right! Next Word.');
-      return 'done';
+      return done;
     }
 
-    // return resultCheck;
+    // console.log(resultCheck);
+
+    return resultCheck;
     // console.log(resultCheck);
   }; // End checkLetter function
 }; // End Constructor Word
