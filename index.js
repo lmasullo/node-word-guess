@@ -34,7 +34,7 @@ function reset(answer) {
   word.createBlankMovie(randMovie, answer);
 
   // Set the guessReset variable
-  guessReset = true;
+  const guessReset = true;
 
   // Start the questions again and reset the guesses
   askQuestion(guessReset);
@@ -85,8 +85,11 @@ const askQuestion = function (guessReset) {
         // Call the constructor on word.js and pass in guessed letter
         const answer = word.checkLetter(answers.letter);
 
-        // Display the concatenated string
-        console.log(answer);
+        // Display the concatenated string is still guessing letters
+        // If the result was true, they guessed right, don't show them "true"
+        if (answer !== true) {
+          console.log(answer);
+        }
 
         // The user has guessed the movie correctly and need to choose a new movie and restart
         if (answer === true) {
@@ -99,9 +102,10 @@ const askQuestion = function (guessReset) {
       });
     // End Count
   } else {
-    console.log("You have used all your guesses!\nHere's a new word");
+    console.log("You have used all your guesses!\nHere's a new word.");
     // They have used all their guesses, Call the reset function
-    reset();
+    const answer = true;
+    reset(answer);
   }
 }; // End Ask Question Recursive function
 
