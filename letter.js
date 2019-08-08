@@ -17,9 +17,6 @@ function Letter() {
 
     // Loop over the movie object (each letter) and find the matching key/values
     Object.keys(objLetters).forEach((key) => {
-      // console.log(`Key: ${key} - Value: ${objLetters[key]}`);
-      // console.log(concatString);
-
       // Check if the value = to the user's guessed letter
       if (objLetters[key] === guessedLetter) {
         // Append the guessed letter
@@ -45,6 +42,7 @@ function Letter() {
       console.log('INCORRECT!');
     }
 
+    // Return the concatenated string
     return concatString;
   }; // End function this is guessed
 } // End Letter Constructor

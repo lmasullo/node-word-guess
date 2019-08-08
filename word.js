@@ -1,6 +1,8 @@
 /* eslint-disable no-plusplus */
+
 // Import letter.js
 const Letter = require('./letter');
+
 // Create a new instance of the constructor
 const letter = new Letter();
 
@@ -9,14 +11,19 @@ const Word = function () {
   // Create the object to hold all the letters
   this.objLetters = {};
 
+  // Create the object to hold the guessed letters
   this.visited = {};
 
   // Creat the initial blank movie object and display
-  this.createBlankMovie = function (randMovie) {
-    console.log(randMovie);
+  this.createBlankMovie = function (randMovie, answer) {
+    // If the movie was guessed and this is a new movie, clear the objects
+    if (answer === true) {
+      this.objLetters = {};
+      this.visited = {};
+    }
+
     // Split the movie into an array of characters
     const splitMovie = randMovie.toLowerCase().split('');
-    // console.log(splitMovie);
 
     // Create the default characters
     let concatMovie = '';
@@ -34,19 +41,13 @@ const Word = function () {
       }
     }
 
-    // console.log(this.objLetters);
+    // Display the initial message and the random movie
     console.log('Try and guess the Movie!');
     console.log(concatMovie);
-    // console.log(objLetters);
-
-    // const newWord = true;
-    // return newWord;
   };
 
+  // This function will send the guessed letter to letters.js
   this.checkLetter = function (guessedLetter) {
-    // console.log(guessedLetter);
-    // console.log(this.objLetters);
-
     // Call the function in letter to check if this letter is in the movie name
     const resultCheck = letter.isGuessed(guessedLetter, this.objLetters, this.visited);
 
@@ -58,52 +59,33 @@ const Word = function () {
         arrLetters.push(this.objLetters[key]);
       }
     });
+
     // Remove duplicates from the array of letters
     arrLetters = arrLetters.filter((v, i, a) => a.indexOf(v) === i);
 
-
     // Put the concatinated string into an array of characters
     let arrConcat = resultCheck.toLowerCase().split('');
+
     // Remove duplicates
     arrConcat = arrConcat.filter((v, i, a) => a.indexOf(v) === i);
+
     // Delete the blank space
     arrConcat = arrConcat.filter(entry => entry.trim() !== '');
-
-    // console.log(arrUnique);
-    // console.log('arrConcat');
-    // console.log(arrConcat);
 
     // Now compare
     const strLetters = JSON.stringify(arrLetters);
     const strVisited = JSON.stringify(arrConcat);
 
-    // // Create an array to hold all the visited letters
-    // let arrVisited = [];
-    // Object.keys(isVisited).forEach((key) => {
-    //   arrVisited.push(key);
-    // });
-
-    // // Sort the arrays
-    // arrUnique = arrUnique.sort();
-    // arrVisited = arrVisited.sort();
-    // // console.log(arrUnique);
-    // // console.log(arrVisited);
-
-    // const strLetters = JSON.stringify(arrUnique);
-    // const strVisited = JSON.stringify(arrVisited);
-    // // console.log(strLetters);
-    // // console.log(strVisited);
-
+    // If they are equal, display message and return done
+    // Return done will trigger the reset
     if (strLetters === strVisited) {
       const done = true;
       console.log('Your Got it Right! Next Word.');
       return done;
     }
 
-    // console.log(resultCheck);
-
+    // Return the concatenated string
     return resultCheck;
-    // console.log(resultCheck);
   }; // End checkLetter function
 }; // End Constructor Word
 
