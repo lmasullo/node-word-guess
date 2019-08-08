@@ -48,6 +48,53 @@ const Word = function () {
 
     // Call the function in letter to check if this letter is in the movie name
     const resultCheck = letter.isGuessed(guessedLetter, this.objLetters, this.visited);
+    console.log(resultCheck);
+
+    // Need to compare the 2 arrays to tell when they
+    // Create an array to hold all the letters
+    const arrLetters = [];
+    Object.keys(this.objLetters).forEach((key) => {
+      if (this.objLetters[key] !== ' ') {
+        arrLetters.push(this.objLetters[key]);
+      }
+    });
+
+    // Remove duplicates
+    const arrUnique = arrLetters.filter((v, i, a) => a.indexOf(v) === i);
+
+    // Put the concatinated string into an array of characters
+    let arrConcat = resultCheck.toLowerCase().split('');
+    // Remove duplicates
+    arrConcat = arrConcat.filter((v, i, a) => a.indexOf(v) === i);
+    // Delete the blank
+
+    // console.log(arrUnique);
+    console.log('arrConcat');
+    console.log(arrConcat);
+
+    // // Create an array to hold all the visited letters
+    // let arrVisited = [];
+    // Object.keys(isVisited).forEach((key) => {
+    //   arrVisited.push(key);
+    // });
+
+    // // Sort the arrays
+    // arrUnique = arrUnique.sort();
+    // arrVisited = arrVisited.sort();
+    // // console.log(arrUnique);
+    // // console.log(arrVisited);
+
+    // const strLetters = JSON.stringify(arrUnique);
+    // const strVisited = JSON.stringify(arrVisited);
+    // // console.log(strLetters);
+    // // console.log(strVisited);
+
+    // if (strLetters === strVisited) {
+    //   const done = true;
+    //   // console.log('Your Got it Right! Next Word.');
+    //   return concatString;
+    // }
+
     // return resultCheck;
     console.log(resultCheck);
   }; // End checkLetter function

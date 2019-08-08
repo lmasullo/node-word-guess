@@ -15,32 +15,35 @@ function Letter() {
     const space = ' ';
     let concatString = '';
 
-    // Loop over object and find the matching key/values
+    // Loop over the movie object (each letter) and find the matching key/values
     Object.keys(objLetters).forEach((key) => {
       // console.log(`Key: ${key} - Value: ${objLetters[key]}`);
+      // console.log(concatString);
 
       // Check if the value = to the user's guessed letter
       if (objLetters[key] === guessedLetter) {
+        // Append the guessed letter
         concatString += ` ${guessedLetter}`;
-        // Set the isVisited to true
+        // Set the isVisited object guessed letter to true
         isVisited[objLetters[key]] = true;
       } else if (objLetters[key] === ' ') {
+        // Append a space
         concatString += ` ${space}`;
       } else if (isVisited[objLetters[key]]) {
+        // If the guessed letter is in isVisited, append it
         concatString += ` ${objLetters[key]}`;
       } else {
+        // Append an Underscore
         concatString += ` ${underscore}`;
       }
     });
 
+    // Display message if guess is correct or not
     if (isVisited[guessedLetter]) {
       console.log('CORRECT!');
     } else {
       console.log('INCORRECT!');
     }
-
-    // console.log(isVisited);
-    // console.log(objLetters);
 
     return concatString;
   }; // End function this is guessed
