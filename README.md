@@ -4,7 +4,7 @@
 
 ## Description:
 
-Love movies? Try you best to guess the random movie.
+Love movies? Try your best to guess the random movie.
 
 ### Installing
 
@@ -31,7 +31,8 @@ The app uses the following NPM packages:
 ![alt text](images/main.png "Main Menu")
 
 * Type a letter and the app will tell you if you are correct. If you guess correctly, the letter will replace the underscore.
-* You get 10 choices, good luck!
+* You must enter one letter at a time.
+* You get 10 guesses, good luck!
 
 ## Demo (Click the Image to View the Demo Video)
 
